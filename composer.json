@@ -6,7 +6,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://lobogit.unm.edu/ous/ous_digraph_module.git"
+            "url": "https://github.com/UNM-OUS/ous_digraph_module.git"
         }
     ],
     "require": {
@@ -16,7 +16,7 @@
         "digraphcms/digraph-submissions": "dev-main",
         "goat1000/svggraph": "^3.1",
         "oomphinc/composer-installers-extender": "^1.1|^2",
-        "unmous/ous_digraph_module": "dev-master"
+        "unmous/ous_digraph_module": "dev-main"
     },
     "autoload": {
         "classmap": [
