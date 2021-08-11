@@ -1,0 +1,105 @@
+types:
+  content:
+    proposal-group: ${module.namespace}\ProposalGroup
+    proposal-call: ${module.namespace}\ProposalCall
+    proposal: ${module.namespace}\Proposal
+    proposal-decision: ${module.namespace}\Decision\Decision
+    proposal-report-2019: ${module.namespace}\Report\Report2019
+
+actions:
+  common:
+    '_user/signedin':
+      myproposals: myproposals/display
+    '_user/guest':
+      myproposals: myproposals/display
+
+factory_columns:
+  content:
+    submission__title:
+      type: VARCHAR(150)
+      index: BTREE
+    submission__year:
+      type: TINYINT
+      index: BTREE
+    submission__semester:
+      type: VARCHAR(10)
+      index: BTREE
+
+permissions:
+  url:
+    myproposals/display: [allow all]
+    proposal-call/*: [deny all, allow group admin]
+    proposal-call/add: ["allow group editor, admin"]
+    proposal-call/anonymized-csv: [allow all]
+    proposal-call/copy: [deny all]
+    proposal-call/display: [allow all]
+    proposal-call/edit: ["allow group editor, admin"]
+    proposal-call/funded: [allow all]
+    proposal-call/stats-graph-by: [allow all]
+    proposal-call/stats: [allow all]
+    proposal-call/submit: [allow group user]
+    proposal-call/version-jumper: [allow all]
+    proposal-decision/*: [deny all, allow group admin]
+    proposal-decision/copy: [deny all]
+    proposal-decision/display: [allow group user]
+    proposal-group/*: [deny all, allow group admin]
+    proposal-group/add: ["allow group editor, admin"]
+    proposal-group/anonymized-csv: [allow all]
+    proposal-group/copy: [deny all]
+    proposal-group/display: [allow all]
+    proposal-group/edit: ["allow group editor, admin"]
+    proposal-group/funded: [allow all]
+    proposal-group/stats-graph-by: [allow all]
+    proposal-group/stats: [allow all]
+    proposal-group/summary: [allow all]
+    proposal-report-2019/copy: [deny all]
+    proposal/*: [deny all, allow group admin]
+    proposal/add: ["allow group editor, admin"]
+    proposal/chunk: [allow group user]
+    proposal/copy: [deny all]
+    proposal/display: [allow group user]
+    proposal/download: [allow group user]
+    proposal/edit: ["allow group admin"]
+    proposal/file: [allow group user]
+    proposal/final-report: [allow group user]
+    proposal/status: [allow group user]
+    proposal/submit-final-report: [allow group user]
+    proposal/template-coverpage: [allow group user]
+  add:
+    proposal-group/proposal-call: [deny all, "allow group editor, admin"]
+
+strings:
+  urls:
+    proper:
+      proposal-call/funded: Funded proposals
+      proposal-call/stats-graph-by: Statistics graph
+      proposal-call/stats: Proposal and funding statistics
+      proposal-call/submit: Submit proposal
+      proposal-call/version-jumper: Version picker
+      proposal-group/anonymized-csv: Anonymized raw data
+      proposal-group/funded: Funded proposals
+      proposal-group/stats-graph-by: Statistics graph
+      proposal-group/stats: Statistics
+      proposal-group/summary: Funding summary
+      proposal/allfiles: file history
+      proposal/download: Download zipped proposal
+      proposal/submit-final-report: Submit final report
+    common:
+      myproposals/display: My proposals
+
+defaultnounbytype:
+  proposal:
+    digraph:
+      slugpattern: "[parent]/[lname]-[id]"
+  proposal-decision:
+    digraph:
+      slugpattern: "[parent]/decision-[id]"
+  proposal-report-2019:
+    digraph:
+      slugpattern: "[parent]/report-[id]"
+  proposal-call:
+    digraph:
+      slugpattern: "[semester]-[year]"
+  proposal-group:
+    digraph:
+      slugpattern: "[parent]/[name]"

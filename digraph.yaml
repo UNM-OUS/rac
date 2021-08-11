@@ -1,0 +1,52 @@
+# Default contents of packages
+package:
+  defaults:
+    fields:
+      site_name: Research Allocations Committee
+
+types:
+  content:
+    file-bundle: Digraph\Modules\FileTypes\FileBundle
+
+permissions:
+  url:
+    '*/versions': ["allow all"]
+    '*/version-diff': ["allow all"]
+
+# Specify a time zone if you want to override your server's default
+timezone: America/Denver
+
+# This site needs caching by distinct users, rather than by groups
+users:
+  defaultmanager: netid
+  namespacing:
+    mode: id
+
+# set a site-specific accent color
+theme:
+  variables:
+    _override:
+      color_accent: "#d6a461"
+
+actions:
+  uiforguests: true
+
+# Template helper options
+templates:
+  theme: [unm-v1]
+  # Additional paths can be added here, they will be used in the reverse of the
+  # order they're listed here
+  paths:
+    site: ${paths.site}/templates
+  twigconfig:
+    cache: ${paths.cache}/twig
+
+# gd, imagick or gmagick -- gd is the default because it's widely supported
+image:
+  driver: gd
+
+# Generally if you want to move your storage/cache directories you should keep
+# them somehow relative to paths.site
+paths:
+  storage: ${paths.site}/digraph/storage
+  cache: ${paths.site}/digraph/cache

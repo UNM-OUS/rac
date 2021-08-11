@@ -1,0 +1,26 @@
+<!-- current/upcoming calls: rac-call.twig -->
+{% if cms.read('prop').openCalls %}
+    {% for call in cms.read('prop').openCalls %}
+        <div class="digraph-card">
+            <h2>{{call.name}}</h2>
+            {{call.bodyText|raw}}
+            <div class="notification notification-notice">
+                {% if call.end %}
+                    <p>Closes {{call.endHR}}</p>
+                {% endif %}
+                <p><a href="{{call.url}}">More information and submission form</a></p>
+            </div>
+        </div>
+    {% endfor %}
+{% elseif cms.read('prop').upcomingCalls %}
+    {% for call in cms.read('prop').upcomingCalls %}
+        <div class="digraph-card">
+            <h2>{{call.name}}</h2>
+            {{call.bodyText|raw}}
+            <div class="notification notification-notice">
+                <p>Opens {{call.startHR}}</p>
+                <p><a href="{{call.url}}">More information</a></p>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}

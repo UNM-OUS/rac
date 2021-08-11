@@ -1,0 +1,11 @@
+module: []
+
+types:
+  content:
+    proposal-report-legacy: ${module.namespace}\LegacyReport
+
+permissions:
+  url:
+    _rac/legacy-import: [deny all, allow group admin]
+    _rac/notify-owners: [deny all, allow group admin]
+    proposal-report-legacy/copy: [deny all]

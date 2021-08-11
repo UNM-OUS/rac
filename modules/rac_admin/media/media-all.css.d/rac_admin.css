@@ -1,0 +1,23 @@
+table {
+    tr.rac-rating-row {
+        background:#fff;
+        &.rac-rating-row-0 {
+            background-color:#999999;
+        }
+        &.rac-rating-row-1 {
+            background-color:#FF7575;
+        }
+        &.rac-rating-row-2 {
+            background-color:#EAA096;
+        }
+        &.rac-rating-row-3 {
+            background-color:#D4CBB6;
+        }
+        &.rac-rating-row-4 {
+            background-color:#B3DE78;
+        }
+        &.rac-rating-row-5 {
+            background-color:#91F03A;
+        }
+    }
+}

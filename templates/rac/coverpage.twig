@@ -1,0 +1,121 @@
+<table style="font-size:11pt;width:100%;">
+    <tr>
+        <td colspan="2" valign="top" style="background:#ddd;text-align:right;">
+            <h1>RAC Proposal Cover Page</h1>
+            {{prop.parent.name}}
+        </td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold;">Applicant name, rank</td>
+        <td width="75%">{{prop.submitter.firstname}} {{prop.submitter.lastname}}, {{prop.submitter.rank}}</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold;">School/College, Department/Division</td>
+        <td width="75%">{{prop.submitter.college}}, {{prop.submitter.department}}</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold;">Campus Address</td>
+        <td width="75%">{{prop.addressHR|raw}}</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold;">Phone</td>
+        <td width="75%">{{prop.submitter.phone}}</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold;">Email</td>
+        <td width="75%">{{prop.submitter.email}}</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold;">Years as Voting Faculty</td>
+        <td width="75%">{{prop.submitter.yearsvoting}}</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold;">Title of proposed research</td>
+        <td width="75%">{{prop.title}}</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold;">Amount requested</td>
+        <td width="75%">{{prop.requestedHR}}</td>
+    </tr>
+    <tr>
+        <td colspan="2" height="1in" valign="top" style="font-size:9pt;">
+            <strong>
+                Number and date of any RAC award during the past five years.
+            </strong>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" height="2.5in" valign="top" style="font-size:9pt;">
+            <strong>
+                For the same time period, list all publications, grants, and other creative works that have resulted from RAC funding.
+            </strong>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" height="2.5in" valign="top" style="font-size:9pt;">
+            <strong>
+                List of all current and pending support (funding agency and amount), indicating which, if any, are related to the current RAC proposal.
+            </strong>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" valign="top" style="font-size:9pt;">
+            <strong>
+                Required signatures
+            </strong>
+            <table border="0" style="background:transparent;font-size:8pt;" width="100%">
+                <tr>
+                    <td>
+                        Department/Division Chair
+                    </td>
+                    <td>
+                        Person responsible for overseeing budgets
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%" height="0.3in" style="border-bottom:1pt solid black;">
+
+                    </td>
+                    <td width="50%" height="0.3in" style="border-bottom:1pt solid black;">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-style:italic;">
+                        Printed Name
+                    </td>
+                    <td style="font-style:italic;">
+                        Printed Name
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%" height="0.3in" style="border-bottom:1pt solid black;">
+
+                    </td>
+                    <td width="50%" height="0.3in" style="border-bottom:1pt solid black;">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-style:italic;">
+                        Signature/date
+                    </td>
+                    <td style="font-style:italic;">
+                        Signature/date
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" valign="top" style="font-size:9pt;background:#ddd;">
+            For more information about the Research Allocations Committee, visit rac.unm.edu<br>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" valign="top" style="font-size:9pt;background:#ddd;">
+            This proposal's submission ID is: {{prop.dso.id}}<br>
+            This proposal's permanent URL is: {{prop.url}} <em>(only accessible to original submitter)</em>
+        </td>
+    </tr>
+</table>

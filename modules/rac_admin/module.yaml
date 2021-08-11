@@ -1,0 +1,94 @@
+helpers:
+  classes:
+    rac: ${module.namespace}\RACHelper
+    racratings: ${module.namespace}\RACRatingHelper
+
+rac:
+  email_debug_bcc: []
+  email_named_templates:
+    prop_started: 'prop_started: Sent automatically when proposals are created'
+    prop_incomplete: 'prop_incomplete: Sent manually to incomplete proposals before deadline'
+    prop_awarded: 'prop_awarded: Sent automatically when decisions are finalized'
+    prop_denied: 'prop_denied: Sent automatically when decisions are finalized'
+    prop_report_due: 'prop_report_due: Sent automatically when a due date is set/changed'
+    prop_report_overdue: 'prop_report_overdue: Sent manually to proposals with overdue reports'
+
+permissions:
+  url:
+    _rac/*: [deny all, "allow group editor, rac_member"]
+    _rac_chair/*: [deny all, "allow group editor, rac_chair"]
+    proposal/mail: ["allow group rac_chair, editor"]
+    proposal/messages: ["allow group user"]
+    proposal-group/full-csv: ["allow group rac_chair, editor"]
+  rac:
+    '*': [deny all, allow group admin]
+    proposal/view: ["allow group editor, rac_member"]
+    assignments/admin: ["allow group rac_chair, editor"]
+
+navigation:
+  parents:
+    common:
+      # chair-only parts
+      _rac_chair/*: _rac/display
+      # other bits
+      _rac_chair/decision: _rac_chair/prop_decisions
+      _rac_chair/finalize_emails: _rac_chair/finalize
+      _rac_chair/mail_templates_edit: _rac_chair/mail_templates
+      _rac/prop_rate: _rac/prop_myassignments
+      _rac_chair/rating_edit: _rac_chair/prop_decisions
+      _rac_chair/reports_duedates_mass: _rac_chair/reports_duedates
+      _rac_chair/reports_duedates_set: _rac_chair/reports_duedates
+
+actions:
+  proper:
+    proposal:
+      mail: '!id/mail'
+  common:
+    '_user/signedin':
+      rac: _rac/display
+
+strings:
+  urls:
+    proper:
+      proposal/mail: send email
+      proposal/messages: Message center
+      proposal-group/full-csv: Full CSV Data
+    common:
+      _rac_chair/display: Chair/admin tools
+      _rac_chair/decision: Add/update funding decision
+      _rac/display: RAC Tools
+      _rac_chair/finalize: Finalize funding decisions
+      _rac_chair/mail_templates: Email templates
+      _rac_chair/mail_templates_edit: Edit/add template
+      _rac_chair/mail_send_bulk: Bulk email to submitters
+      _rac_chair/mail_send: Send emails
+      _rac_chair/prop_assign: Bulk assignment builder
+      _rac_chair/prop_assignments: Reviewer assignments
+      _rac_chair/prop_decisions: Draft funding decisions
+      _rac/prop_list: Full proposal list
+      _rac/prop_myassignments: My review assignments
+      _rac/prop_rate: Rate proposal
+      _rac/prop_ratings: Proposal ratings
+      _rac/props_funded: Funded proposals
+      _rac/props_incomplete: Incomplete proposals
+      _rac/props_notfunded: Non-funded proposals
+      _rac_chair/rating_edit: Edit rating
+      _rac_chair/reports_duedates: Final report due dates
+      _rac_chair/reports_duedates_bulk: Bulk set due dates
+      _rac_chair/reports_duedates_set: Set due date
+      _rac_chair/reports_overdue: Overdue final reports
+      _rac/reports_submitted: Submitted final reports
+      _rac_chair/reviewer_profiles: Reviewer profiles
+      _rac_chair/reviewer_status: Reviewer assignment status
+      _rac/search_netid: Search by NetID
+      _rac/search_title: Search by title
+      _rac_chair/submitter_names: Submitter names
+
+users:
+  groups:
+    sources:
+      rac:
+        class: Digraph\Modules\ous_digraph_module\Users\FacgovGroupSource
+        args:
+          prefix: rac_
+          source: "https://facgov.unm.edu/0b24feb2a4/json"
