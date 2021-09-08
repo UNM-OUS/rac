@@ -1,5 +1,8 @@
 name: Deploy to test
-on: push
+on:
+  push:
+    branches-ignore:
+      - main
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -15,7 +18,7 @@ jobs:
           version: 2
           php_version: 7.1
           php_extensions: zip gd
-          dev: no
+          args: --no-dev
           ssh_key: ${{ secrets.SSH_KEY }}
           ssh_key_pub: ${{ secrets.SSH_KEY_PUB }}
       - name: Enter maintenance mode
