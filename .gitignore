@@ -20,5 +20,6 @@
 
 # ignore environment config
 env.yaml
+env.json
 
 # END DIGRAPH-MANAGED: GITIGNORE

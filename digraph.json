@@ -1,0 +1,59 @@
+{
+  "package": {
+    "defaults": {
+      "fields": {
+        "site_name": "Research Allocations Committee"
+      }
+    }
+  },
+  "types": {
+    "content": {
+      "file-bundle": "Digraph\\Modules\\FileTypes\\FileBundle"
+    }
+  },
+  "permissions": {
+    "url": {
+      "*/versions": [
+        "allow all"
+      ],
+      "*/version-diff": [
+        "allow all"
+      ]
+    }
+  },
+  "timezone": "America/Denver",
+  "users": {
+    "defaultmanager": "netid",
+    "namespacing": {
+      "mode": "id"
+    }
+  },
+  "theme": {
+    "variables": {
+      "_override": {
+        "color_accent": "#d6a461"
+      }
+    }
+  },
+  "actions": {
+    "uiforguests": true
+  },
+  "templates": {
+    "theme": [
+      "unm-v1"
+    ],
+    "paths": {
+      "site": "${paths.site}/templates"
+    },
+    "twigconfig": {
+      "cache": "${paths.cache}/twig"
+    }
+  },
+  "image": {
+    "driver": "gd"
+  },
+  "paths": {
+    "storage": "${paths.site}/digraph/storage",
+    "cache": "${paths.site}/digraph/cache"
+  }
+}
