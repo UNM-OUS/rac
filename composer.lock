@@ -544,12 +544,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/digraph-cms/digraph-core.git",
-                "reference": "432fffdc6f9daa912ee31b07b32a65e831505bc8"
+                "reference": "0a24143816d5a9c89edd7b3117a6d70f6481293a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digraph-cms/digraph-core/zipball/432fffdc6f9daa912ee31b07b32a65e831505bc8",
-                "reference": "432fffdc6f9daa912ee31b07b32a65e831505bc8",
+                "url": "https://api.github.com/repos/digraph-cms/digraph-core/zipball/0a24143816d5a9c89edd7b3117a6d70f6481293a",
+                "reference": "0a24143816d5a9c89edd7b3117a6d70f6481293a",
                 "shasum": ""
             },
             "require": {
@@ -606,7 +606,7 @@
                 "issues": "https://github.com/digraph-cms/digraph-core/issues",
                 "source": "https://github.com/digraph-cms/digraph-core/tree/v1"
             },
-            "time": "2021-09-23T19:26:52+00:00"
+            "time": "2021-10-07T18:14:44+00:00"
         },
         {
             "name": "digraphcms/digraph-core-themes",
@@ -947,12 +947,12 @@
             "version": "1.2.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/avalanche123/Imagine.git",
+                "url": "https://github.com/php-imagine/Imagine.git",
                 "reference": "d2e18be6e930ca169e4f921ef73ebfc061bf55d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/d2e18be6e930ca169e4f921ef73ebfc061bf55d8",
+                "url": "https://api.github.com/repos/php-imagine/Imagine/zipball/d2e18be6e930ca169e4f921ef73ebfc061bf55d8",
                 "reference": "d2e18be6e930ca169e4f921ef73ebfc061bf55d8",
                 "shasum": ""
             },
@@ -999,8 +999,8 @@
                 "image processing"
             ],
             "support": {
-                "issues": "https://github.com/avalanche123/Imagine/issues",
-                "source": "https://github.com/avalanche123/Imagine/tree/1.2.4"
+                "issues": "https://github.com/php-imagine/Imagine/issues",
+                "source": "https://github.com/php-imagine/Imagine/tree/1.2.4"
             },
             "time": "2020-11-03T22:35:03+00:00"
         },
