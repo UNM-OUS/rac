@@ -26,3 +26,7 @@ if ($report = $prop->report()) {
         $cms->helper('notifications')->error("Final report was due " . $s->datetime($due) . ".<br><a href='" . $prop->url('submit-final-report') . "'>Submit final report</a>.");
     }
 }
+
+echo "<noscript>";
+echo $cms->helper('notifications')->printError("This form does not function correctly without Javascript enabled. Please enable Javascript in your browser.");
+echo "</noscript>";

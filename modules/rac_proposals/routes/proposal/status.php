@@ -20,6 +20,7 @@ if (!$submission->complete()) {
             if ($window = $submission->window()) {
                 if ($window->end() && !$window->ended()) {
                     $icWarning .= '<br>Proposal can be edited until ' . $window->endHR();
+                    $icWarning .= '<br>Proposal will be automatically submitted once all fields are completed. If this banner does not update after you complete your submission, try <a href="' . $submission->url() . '">refreshing the page</a>.';
                 }
             }
             $status['type'] = 'notice';
