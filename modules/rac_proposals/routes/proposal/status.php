@@ -1,6 +1,5 @@
 <?php
-$package->cache_private();
-$package['response.ttl'] = $cms->config['submissions.status_ttl'];
+$package->cache_noStore();
 $package->makeMediaFile('status.json');
 $status = [
     'type' => 'none',
