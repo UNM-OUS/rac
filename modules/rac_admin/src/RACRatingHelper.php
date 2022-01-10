@@ -1,4 +1,5 @@
 <?php
+
 namespace Digraph\Modules\rac_admin;
 
 use Digraph\Helpers\AbstractHelper;
@@ -34,7 +35,11 @@ class RACRatingHelper extends AbstractHelper
                 }
             }
         }
-        return round($score / count($ratings));
+        $score = round($score / count($ratings));
+        if ($prop['submission_optouts.prop_resubmission'] === false) {
+            $score += 5;
+        }
+        return $score;
     }
 
     public function ratings(Proposal $prop)

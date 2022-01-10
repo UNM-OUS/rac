@@ -28,7 +28,7 @@ usort(
 );
 
 echo "<h3>Proposal statistics</h3>";
-echo "<p>Funding decisions are not visible to proposers until the <a href='".$this->url('_rac_chair', 'finalize')."'>funding finalization tool</a> is run.</p>";
+echo "<p>Funding decisions are not visible to proposers until the <a href='" . $this->url('_rac_chair', 'finalize') . "'>funding finalization tool</a> is run.</p>";
 echo $cms->helper('rac')->propStatsTable($props, true);
 
 echo "<h3>Proposal list</h3>";
@@ -51,7 +51,7 @@ foreach ($props as $prop) {
     echo "</td>";
     //fundability score
     echo "<td valign='top'>";
-    echo '<p>'.$ratings->fundabilityScore($prop).'</p>';
+    echo '<p>' . $ratings->fundabilityScore($prop) . '</p>';
     echo "</td>";
     //ratings
     echo "<td valign='top' style='white-space:nowrap;'>";
@@ -67,13 +67,13 @@ foreach ($props as $prop) {
                 $name = $r->netid();
             }
             echo "<p>";
-            echo "<strong>".$name."</strong><br>";
-            echo "Compliant: ".($r->fundable()?'Yes':'No').'<br>';
+            echo "<strong>" . $name . "</strong><br>";
+            echo "Compliant: " . ($r->fundable() ? 'Yes' : 'No') . '<br>';
             echo $r->scoreHR();
-            echo "<div><a href='".$this->url('_rac_chair', 'rating_edit', [
-                    'prop' => $prop['dso.id'],
-                    'netid' => $r->netid()
-                ])."'>view/edit</a></div>";
+            echo "<div><a href='" . $this->url('_rac_chair', 'rating_edit', [
+                'prop' => $prop['dso.id'],
+                'netid' => $r->netid()
+            ]) . "'>view/edit</a></div>";
             echo '</p>';
         }
     }
@@ -83,12 +83,12 @@ foreach ($props as $prop) {
     if ($decision) {
         echo $decision->info();
         if (!$prop->finalDecision()) {
-            echo "<a href='".$this->url('_rac_chair', 'decision', ['prop'=>$prop['dso.id']])."'>[edit decision]</a>";
+            echo "<a href='" . $this->url('_rac_chair', 'decision', ['prop' => $prop['dso.id']]) . "'>[edit decision]</a>";
         } else {
             echo '[finalized]';
         }
     } else {
-        echo "<a href='".$this->url('_rac_chair', 'decision', ['prop'=>$prop['dso.id']])."'>[add decision]</a>";
+        echo "<a href='" . $this->url('_rac_chair', 'decision', ['prop' => $prop['dso.id']]) . "'>[add decision]</a>";
     }
     echo "</td>";
 }
