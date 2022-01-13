@@ -89,16 +89,16 @@
         },
         {
             "name": "byjoby/flatrr",
-            "version": "v1.4.0",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jobyone/flatrr.git",
-                "reference": "61d24eb3e8ed30fbe8156f51c4d08d248903f387"
+                "reference": "a82b9e1052c17e33d2f868223025d0fe155e311b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jobyone/flatrr/zipball/61d24eb3e8ed30fbe8156f51c4d08d248903f387",
-                "reference": "61d24eb3e8ed30fbe8156f51c4d08d248903f387",
+                "url": "https://api.github.com/repos/jobyone/flatrr/zipball/a82b9e1052c17e33d2f868223025d0fe155e311b",
+                "reference": "a82b9e1052c17e33d2f868223025d0fe155e311b",
                 "shasum": ""
             },
             "require": {
@@ -127,9 +127,9 @@
             "description": "A library for working with multi-dimensional arrays through flattened keys",
             "support": {
                 "issues": "https://github.com/jobyone/flatrr/issues",
-                "source": "https://github.com/jobyone/flatrr/tree/v1.4.0"
+                "source": "https://github.com/jobyone/flatrr/tree/v1.4.1"
             },
-            "time": "2021-09-13T16:52:13+00:00"
+            "time": "2022-01-13T01:11:09+00:00"
         },
         {
             "name": "byjoby/formward",
