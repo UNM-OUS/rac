@@ -5,22 +5,23 @@ if (!$call->ended()) {
     return;
 }
 
-$package['response.ttl'] = 3600*8;
+$package['response.ttl'] = 3600 * 8;
 
 $data = array_map(
     function ($prop) use ($call) {
         $out = [
-            'prop-'.hash('crc32', hash('md2', $prop['dso.id'].$prop->name())),
+            'prop-' . hash('crc32', hash('md5', $prop['dso.id'] . $prop->name())),
             $call['semester.year'],
             $call['semester.semester'],
             $prop['submission.discipline'],
             $prop['submitter.college'],
+            $prop['submitter.department'],
             $prop['submitter.rank'],
             $prop['submitter.yearsvoting'],
             $prop['submission.requested']
         ];
         if ($prop->finalDecision()) {
-            $out[] = $prop->decision()?($prop->decision()->funded()?$prop->decision()->funded():0):'[no decision]';
+            $out[] = $prop->decision() ? ($prop->decision()->funded() ? $prop->decision()->funded() : 0) : '[no decision]';
         } else {
             $out[] = '[no decision]';
         }
@@ -37,6 +38,7 @@ array_unshift($data, [
     'semester',
     'discipline',
     'college',
+    'department',
     'submitter rank',
     'submitter years voting faculty',
     'amount requested',
@@ -48,7 +50,7 @@ $data = array_map(
         foreach ($row as $i => $d) {
             $d = transliterate($d);
             $d = str_replace('"', '""', $d);
-            $row[$i] = '"'.$d.'"';
+            $row[$i] = '"' . $d . '"';
         }
         return implode(',', $row);
     },
@@ -56,7 +58,7 @@ $data = array_map(
 );
 
 $package->makeMediaFile(
-    $call->name().' '.$call['dso.id'].'.csv'
+    $call->name() . ' ' . $call['dso.id'] . '.csv'
 );
 $package->binaryContent(implode("\r\n", $data));
 
