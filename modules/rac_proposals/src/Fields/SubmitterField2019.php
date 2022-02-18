@@ -26,7 +26,6 @@ class SubmitterField2019 extends \Digraph\Modules\Submissions\SubmitterField
         unset($options['College of Nursing']);
         unset($options['College of Pharmacy']);
         unset($options['College of Population Health']);
-        unset($options['School of Law']);
         unset($options['School of Medicine']);
         $this['college']->options($options);
         $this['college']->required(true);
